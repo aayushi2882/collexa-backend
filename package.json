@@ -16,5 +16,10 @@
     "url": "https://github.com/aayushi2882/collexa-backend/issues"
   },
   "homepage": "https://github.com/aayushi2882/collexa-backend#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  }
 }
