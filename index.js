@@ -18,6 +18,10 @@ app.use(express.json());
 const userRoutes = require("./routes/userRoutes");
 app.use("/users", userRoutes);
 
+const eventRoutes = require("./routes/eventRoutes");
+app.use("/events", eventRoutes);
+
+
 app.get("/", (req, res) => {
   res.send("Collexa backend is running 🚀");
 });
