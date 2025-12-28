@@ -1,17 +1,22 @@
-const express = require("express");
-const cors = require("cors");
 require("dotenv").config();
 
+const express = require("express");
+const cors = require("cors");
 const connectDB = require("./config/db");
 console.log("MONGO_URI:", process.env.MONGO_URI);
 
 
 const app = express();
 
-connectDB(); // 👈 THIS MUST BE HERE
+// Connect to MongoDB
+connectDB(); 
 
+// Middleware
 app.use(cors());
 app.use(express.json());
+
+const userRoutes = require("./routes/userRoutes");
+app.use("/users", userRoutes);
 
 app.get("/", (req, res) => {
   res.send("Collexa backend is running 🚀");
